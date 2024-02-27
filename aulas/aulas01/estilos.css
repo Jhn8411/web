@@ -1,0 +1,17 @@
+html {
+width: 100%;    
+}
+
+
+#titulo{
+font-size: 24rem;
+}
+
+.justificado{
+text-align: justify;
+color:blueviolet;
+width: 24rem;
+font-size: 10rem;
+justify-items: auto;
+}
+
