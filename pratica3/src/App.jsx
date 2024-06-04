@@ -12,14 +12,12 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="*" element={
-          <Layout>
+        <Route element={<Layout>}>
             <Route path="/" element={<Home />} />
             <Route path="/novo" element={<Novo />} />
             <Route path="/editar/:id" element={<Editar />} /> 
-            <Route path="/remover/:id" element={<Remover />} /> 
-          </Layout>
-        } />
+            <Route path="/remover/:id" element={<Remover />} />           
+        </Route>
         <Route path="*" element={<Erro404 />} />
       </Routes>
     </BrowserRouter>
