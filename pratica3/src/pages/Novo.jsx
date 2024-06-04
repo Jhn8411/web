@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ContatosContext from '../contexts/ContatosContext';
+import { ContatosContext } from '../contexts/ContatosContext';
 
 function Novo() {
     const [nome, setNome] = useState('');

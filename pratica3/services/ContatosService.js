@@ -1,8 +1,5 @@
-// ContatosService.js
+const API_URL = 'http://localhost:5173/';
 
-const API_URL = 'http://localhost:3000/contatos';
-
-// Função para buscar todos os contatos
 async function buscarTodos() {
   try {
     const response = await fetch(API_URL);
@@ -14,7 +11,6 @@ async function buscarTodos() {
   }
 }
 
-// Função para buscar um contato pelo ID
 async function buscarUm(id) {
   try {
     const response = await fetch(`${API_URL}/${id}`);
@@ -26,7 +22,6 @@ async function buscarUm(id) {
   }
 }
 
-// Função para adicionar um novo contato
 async function adicionar(contato) {
   try {
     const response = await fetch(API_URL, {
@@ -44,7 +39,6 @@ async function adicionar(contato) {
   }
 }
 
-// Função para atualizar um contato existente
 async function atualizar(contato) {
   try {
     const response = await fetch(`${API_URL}/${contato.id}`, {
@@ -62,7 +56,6 @@ async function atualizar(contato) {
   }
 }
 
-// Função para remover um contato pelo ID
 async function remover(id) {
   try {
     await fetch(`${API_URL}/${id}`, {
@@ -76,9 +69,9 @@ async function remover(id) {
 }
 
 export default {
-    buscarTodos,
-    buscarUm,
-    adicionar,
-    atualizar,
-    remover,
-  };
+  buscarTodos,
+  buscarUm,
+  adicionar,
+  atualizar,
+  remover,
+};

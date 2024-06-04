@@ -24,7 +24,7 @@ function Remover() {
     };
 
     fetchContato();
-  }, []);
+  },);
 
   const handleSubmit = async () => {
     try {

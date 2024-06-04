@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
-export function Navbar() {
+function Navbar() {
     return (
         <ul>
             <li><NavLink to="/" end>Meus Contatos</NavLink></li>
@@ -9,3 +9,5 @@ export function Navbar() {
         </ul>
     );
 }
+
+export default Navbar;

@@ -27,7 +27,7 @@ function Editar() {
     };
 
     fetchContato();
-  }, []);
+  }, );
 
   const handleSubmit = async (e) => {
     e.preventDefault();

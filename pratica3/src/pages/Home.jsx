@@ -7,7 +7,7 @@ function Home() {
 
   useEffect(() => {
     listarContatos();
-  },);
+  }, );
 
   return (
     <div>

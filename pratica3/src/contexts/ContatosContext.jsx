@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react';
 import PropTypes from 'prop-types';
-import { buscarTodos, buscarUm, atualizar, remover, adicionar } from '../../services/ContatosService';
+import ContatoService from '../../services/ContatosService';
 
 const ContatosContext = createContext();
 
@@ -9,7 +9,7 @@ export function ContatosContextProvider({ children }) {
 
   const listar = async () => {
     try {
-      const resultado = await buscarTodos();
+      const resultado = await ContatoService.buscarTodos();
       setContatos(resultado);
     } catch (error) {
       console.error('Erro ao buscar contatos:', error);
@@ -18,7 +18,7 @@ export function ContatosContextProvider({ children }) {
 
   const consultar = async (id) => {
     try {
-      const resultado = await buscarUm(id);
+      const resultado = await ContatoService.buscarUm(id);
       return resultado;
     } catch (error) {
       console.error('Erro ao consultar contato por ID:', error);
@@ -28,7 +28,7 @@ export function ContatosContextProvider({ children }) {
 
   const alterar = async (contato) => {
     try {
-      await atualizar(contato);
+      await ContatoService.atualizar(contato);
     } catch (error) {
       console.error('Erro ao atualizar contato:', error);
     }
@@ -36,7 +36,7 @@ export function ContatosContextProvider({ children }) {
 
   const excluir = async (id) => {
     try {
-      await remover(id);
+      await ContatoService.remover(id);
     } catch (error) {
       console.error('Erro ao remover contato:', error);
     }
@@ -44,7 +44,7 @@ export function ContatosContextProvider({ children }) {
 
   const incluir = async (novoContato) => {
     try {
-      await adicionar(novoContato);
+      await ContatoService.adicionar(novoContato);
     } catch (error) {
       console.error('Erro ao adicionar contato:', error);
     }
@@ -70,4 +70,5 @@ ContatosContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default ContatosContext;
+export default ContatosContextProvider;
+export { ContatosContext };
