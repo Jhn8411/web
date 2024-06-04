@@ -1,9 +1,8 @@
-import React from 'react';
 import Navbar from './Navbar'
 import { Outlet } from 'react-router-dom';
 import './Layout.css';
 
-function Layout({ children }) {
+function Layout() {
     return (
         <>
             <header>

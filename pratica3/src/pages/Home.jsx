@@ -1,14 +1,28 @@
-import { useContext } from 'react';
-import ContatosContext from '../contexts/ContatosContext';
+import { useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom'; 
+import { ContatosContext } from '../contexts/ContatosContext';
 
 function Home() {
-    const { meusContatos } = useContext(ContatosContext);
+  const { meusContatos, listarContatos } = useContext(ContatosContext);
 
-    return (
-        <ul>
-            {meusContatos.map((contato, key) => <li key={key}>{contato.nome} - {contato.telefone}</li>)}
-        </ul>
-    );
+  useEffect(() => {
+    listarContatos();
+  },);
+
+  return (
+    <div>
+      <h1>Lista de Contatos</h1>
+      <ul>
+        {meusContatos.map((contato) => (
+          <li key={contato.id}>
+            {contato.nome} - {contato.telefone}{' '}
+            <Link to={`/editar/${contato.id}`}>Editar</Link> |{' '}
+            <Link to={`/remover/${contato.id}`}>Remover</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export default Home;
