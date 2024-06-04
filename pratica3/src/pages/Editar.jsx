@@ -27,7 +27,7 @@ function Editar() {
     };
 
     fetchContato();
-  }, [id, consultarContato]);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
