@@ -24,7 +24,7 @@ function Remover() {
     };
 
     fetchContato();
-  }, [id, consultarContato]);
+  }, []);
 
   const handleSubmit = async () => {
     try {
